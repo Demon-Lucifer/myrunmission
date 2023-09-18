@@ -57,6 +57,7 @@ def show_line(lines):
 
 
 if __name__ == '__main__':
+    time.sleep(random.randrange(0, 180))
     print('当前用户：{}'.format(today()['data']['user']['name']))
     print('运动次数：{}'.format(today()['data']['user']['sport_num']))
     get_line()
