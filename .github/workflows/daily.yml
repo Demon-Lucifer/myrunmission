@@ -21,6 +21,7 @@ jobs:
       run: |
         pip install -r requirements.txt  # 如果有依赖的话，将 requirements.txt 替换成你的依赖文件名
         pip install requests  # 安装 requests 模块
+        pip install pytz # 安装 pytz 模块
 
     - name: Run Python Script
       run: python src/dlc.py  # 指定你的 Python 脚本路径
