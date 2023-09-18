@@ -1,18 +1,22 @@
-name: DLC
+name: Daily Python Job
+
 on:
-  workflow_dispatch:
   schedule:
-    # IMPORTANT: Set cron job in UTC timezone
-    - cron:  '0 20 * * *'
+    - cron: '0 4 * * *'  # 每天的北京时间中午12点触发
 
 jobs:
-  run-python-script:
+  run-python-job:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-python@v2
-        with:
-          python-version: '3.8.0'
-      - run: pip install requests
-      - run: python src/dlc.py
-      
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.9'  # 选择你的 Python 版本
+
+    - name: Run Python Script
+      run: |
+        python dlc.py  # 这里使用你的 Python 脚本的文件名（dlc.py）
