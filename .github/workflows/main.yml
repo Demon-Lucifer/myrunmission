@@ -2,7 +2,7 @@ name: Daily Python Job
 
 on:
   schedule:
-    - cron: '0 4 * * *'  # 每天的北京时间中午12点触发
+    - cron: '0 6 16 * * ?'  # 每天的北京时间中午12点触发
 
 jobs:
   run-python-job:
