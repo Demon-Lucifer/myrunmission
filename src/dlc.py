@@ -51,7 +51,7 @@ def delay(start_time, end_time, n):
     delay_time = (end_time - start_time) * random.uniform(0.5, 0.9) / (n - 1)
     delay_time = delay_time + datetime.timedelta(hours=0, minutes=0, seconds=random.randrange(0, 30))
     print('下次打卡时间{}'.format(datetime.datetime.now(beijing_timezone) + delay_time))
-    # time.sleep(delay_time.seconds)
+    time.sleep(delay_time.seconds)
 
 
 def show_line(lines):
