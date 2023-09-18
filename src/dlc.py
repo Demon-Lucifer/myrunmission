@@ -2,6 +2,10 @@ import random
 import time
 import datetime
 import requests
+import pytz
+
+# 设置北京时区
+beijing_timezone = pytz.timezone('Asia/Shanghai')
 
 token = "609085c824de4ef2ae616da34f1d364e"
 
@@ -46,8 +50,8 @@ def daka(lat, lng, id, line):
 def delay(start_time, end_time, n):
     delay_time = (end_time - start_time) * random.uniform(0.5, 0.9) / (n - 1)
     delay_time = delay_time + datetime.timedelta(hours=0, minutes=0, seconds=random.randrange(0, 30))
-    print('下次打卡时间{}'.format(datetime.datetime.now() + delay_time))
-    time.sleep(delay_time.seconds)
+    print('下次打卡时间{}'.format(datetime.datetime.now(beijing_timezone) + delay_time))
+    # time.sleep(delay_time.seconds)
 
 
 def show_line(lines):
@@ -58,6 +62,7 @@ def show_line(lines):
 
 if __name__ == '__main__':
     time.sleep(random.randrange(0, 180))
+    
     print('当前用户：{}'.format(today()['data']['user']['name']))
     print('运动次数：{}'.format(today()['data']['user']['sport_num']))
     get_line()
