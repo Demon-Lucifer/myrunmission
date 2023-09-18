@@ -2,7 +2,7 @@ name: Daily Python Job
 
 on:
   schedule:
-    - cron: '* 22 * * *'  # 每五分钟触发
+    - cron: '*/1 * * * *'  # 每五分钟触发
 
 jobs:
   run-python-job:
@@ -19,6 +19,7 @@ jobs:
 
     - name: Install Dependencies
       run: |
+        pip install -r requirements.txt  # 如果有依赖的话，将 requirements.txt 替换成你的依赖文件名
         pip install requests  # 安装 requests 模块
 
     - name: Run Python Script
