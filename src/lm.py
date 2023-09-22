@@ -7,7 +7,7 @@ import pytz
 # 设置北京时区
 beijing_timezone = pytz.timezone('Asia/Shanghai')
 
-token = "e38412bee48b445aa0063f37953b61b0"
+token = "653a052a008f4c99832b6aba4c40109a"
 
 # 起点经纬度
 lat = 36.56155382
